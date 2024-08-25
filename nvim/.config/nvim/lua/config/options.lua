@@ -15,7 +15,7 @@ opt.smartcase = true
 -- disable netrw at the very start of your init.lua
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
-g.have_nerd_font = false -- Set to true if you have a Nerd Font installed
+g.have_nerd_font = true -- Set to true if you have a Nerd Font installed
 
 g.neovide_cursor_vfx_mode = 'railgun'
 -- g.neovide_cursor_vfx_particle_lifetime = 5
