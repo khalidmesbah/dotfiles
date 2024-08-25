@@ -3,6 +3,8 @@ alias zc="nvim ~/.zshrc"
 alias zs="nvim ~/.shellrc"
 alias zr='source /home/khalidmesbah/.zshrc'
 alias ohmyzsh="mate ~/.oh-my-zsh"
+# dotfiles
+alias .f='cd ~/dotfiles/'
 # terminal
 alias cd='z'
 alias cat='bat'
@@ -491,7 +493,8 @@ mp3() {
 # --------------------
 
 export PGDATA=/var/lib/postgres/data
-export EDITOR='nvim'
+export EDITOR='/home/khalidmesbah/.config/nvim'
+export SUDO_EDITOR='/home/khalidmesbah/.config/nvim'
 export TERMINAL='st-256color'
 export BROWSER='thorium-browser'
 export FONT='Caskaydia Cove Nerd Font'
