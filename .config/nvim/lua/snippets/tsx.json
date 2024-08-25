@@ -1,0 +1,10 @@
+{
+	"Print to console": {
+		"scope": "typescriptreact,typescript",
+		"prefix": "l",
+		"body": [
+			"console.log($1)"
+		],
+		"description": "Log output to console"
+	}
+}

@@ -1,0 +1,17 @@
+return {
+  'nvimtools/none-ls.nvim',
+  event = 'VeryLazy',
+  config = function()
+    local null_ls = require 'null-ls'
+    require('none-ls').setup {
+      -- you can add more filetypes here
+      filetypes = { 'lua', 'python', 'javascript', 'typescript', 'css', 'html', 'json', 'yaml', 'markdown' },
+      -- you can add more tools here
+      tools = {
+        null_ls.builtins.formatting.stylua,
+        null_ls.builtins.formatting.prettier,
+        null_ls.builtins.diagnostics.markdownlint,
+      },
+    }
+  end,
+}

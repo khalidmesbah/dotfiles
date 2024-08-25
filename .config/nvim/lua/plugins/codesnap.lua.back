@@ -1,0 +1,21 @@
+return {
+  {
+    'mistricky/codesnap.nvim',
+    lazy = true,
+    build = 'make build_generator',
+    keys = {
+      { '<leader>cc', '<cmd>CodeSnap<cr>', mode = 'x', desc = 'Save selected code snapshot into clipboard' },
+      { '<leader>cs', '<cmd>CodeSnapSave<cr>', mode = 'x', desc = 'Save selected code snapshot in ~/Pictures' },
+    },
+    opts = {
+      save_path = '~/pictures/codesnapshots',
+      has_breadcrumbs = false,
+      bg_theme = 'default',
+      bg_padding = 0,
+      bg_x_padding = 0,
+      bg_y_padding = 0,
+      has_line_number = false,
+      mac_window_bar = false,
+    },
+  },
+}

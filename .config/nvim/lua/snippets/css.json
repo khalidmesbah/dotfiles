@@ -1,0 +1,63 @@
+{
+  "a": {
+    "prefix": "aa",
+    "body": [
+      "*,",
+      "*::after,",
+      "*::before {",
+      "  margin: 0;",
+      "  padding: 0;",
+      "  box-sizing: border-box;",
+      "}"
+    ],
+    "description": "a"
+  },
+  "b": {
+    "prefix": "b",
+    "body": [
+      "body {",
+      "  min-height: 100vh;",
+      "  display: grid;",
+      "  place-content: center;",
+      "  background: #333;",
+      "  font-family: sans-serif;",
+      "}"
+    ],
+    "description": "b"
+  },
+  "cf": {
+    "prefix": "cf",
+    "body": [
+      "display: flex;",
+      "justify-content: center;",
+      "align-items: center;"
+    ],
+    "description": "cf"
+  },
+  "cg": {
+    "prefix": "cf",
+    "body": [
+      "display: grid;",
+      "place-content: center;"
+    ],
+    "description": "cf"
+  },
+  "cn": {
+    "prefix": "cn",
+    "body": [
+      "position: absolute;",
+      "top: 50%;",
+      "left: 50%;",
+      "transform: translate(-50%,-50%);"
+    ],
+    "description": "cf"
+  },
+  "cc": {
+    "prefix": "cc",
+    "body": [
+      "content: \"\";",
+      "$1"
+    ],
+    "description": "cc"
+  }
+}

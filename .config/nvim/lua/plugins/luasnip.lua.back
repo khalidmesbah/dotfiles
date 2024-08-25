@@ -1,0 +1,29 @@
+-- luasnip.lua
+
+local luasnap = require 'luasnip'
+local s = luasnap.snippet
+local t = luasnap.text_node
+local i = luasnap.insert_node
+local extras = require 'luasnip.extras'
+local rep = extras.rep
+local fmt = require('luasnip.extras.fmt').fmt
+local c = luasnap.choice_node
+local f = luasnap.function_node
+local d = luasnap.dynamic_node
+local sn = luasnap.snippet_node
+
+luasnap.add_snippets('typescriptreact', {
+  -- 1st version
+  s('co', {
+    t 'position([',
+    f(function()
+      local register_data = vim.fn.getreg() .. ''
+      if string.match(register_data, '[%d-]+,%s*[%d-]+') then
+        return register_data
+      else
+        print 'register does not contain the pattern'
+      end
+    end),
+    t '])',
+  }),
+})
