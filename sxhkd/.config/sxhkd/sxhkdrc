@@ -1,16 +1,16 @@
 # change the keyboard layout -> by khalid mesbah
 super + space 
-  ~/scripts/toggleKbd.sh
+  ~/repos/workflow/scripts/toggleKbd.sh
 F7
-  ~/scripts/toggleKbd.sh
+  ~/repos/workflow/scripts/toggleKbd.sh
 alt + Tab
   notify-send "alt+tab"
 XF86AudioRaiseVolume
-  ~/scripts/volumeIndicator.sh "up"
+  source ~/repos/workflow/scripts/volumeIndicator.sh "up"
 XF86AudioLowerVolume
-  ~/scripts/volumeIndicator.sh "down"
+  ~/repos/workflow/scripts/volumeIndicator.sh "down"
 XF86AudioMute
-  ~/scripts/volumeIndicator.sh "mute"
+  ~/repos/workflow/scripts/volumeIndicator.sh "mute"
 
 #pactl set-sink-volume @DEFAULT_SINK@ -5%
 #pactl set-sink-mute @DEFAULT_SINK@ toggle

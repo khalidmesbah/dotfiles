@@ -27,7 +27,7 @@ g.neovide_cursor_vfx_mode = 'railgun'
 
 --O-------------------------------------------------------------------------------
 
-o.guifont = 'JetBrainsMono Nerd Font Mono:h14'
+o.guifont = 'JetBrainsMono Nerd Font Mono:h16'
 
 --OPTS-------------------------------------------------------------------------------
 opt.splitright = true
