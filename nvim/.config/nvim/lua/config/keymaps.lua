@@ -81,4 +81,23 @@ map('n', '<leader>f', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
 --
 
 -- hob.nvim
-map('n', '<leader>h', '<CMD>HopWord<CR>', { desc = 'Open parent directory' })
+map('n', 'f', '<CMD>HopWord<CR>', { desc = 'Open parent directory' })
+
+-- moving
+map('n', 'j', 'gj', { desc = 'move down' })
+map('n', 'k', 'gk', { desc = 'move up' })
+
+-- gitsigns
+map('n', '<leader>gs', ':gitsigns stage_hunk<cr>', { desc = 'stage hunk' })
+map('n', '<leader>gu', ':gitsigns undo_stage_hunk<cr>', { desc = 'undo stage hunk' })
+map('n', '<leader>gr', ':Gitsigns reset_hunk<CR>', { desc = 'Reset hunk' })
+map('n', '<leader>gd', ':Gitsigns diffthis<CR>', { desc = 'Diff this file' })
+map('n', '<leader>gb', ':Gitsigns blame_line<CR>', { desc = 'Blame line' })
+map('n', '<leader>gp', ':Gitsigns preview_hunk<CR>', { desc = 'Preview hunk' })
+map('n', '<leader>gh', ':Gitsigns reset_buffer<CR>', { desc = 'Reset buffer' })
+map('n', '<leader>gH', ':Gitsigns reset_buffer_index<CR>', { desc = 'Reset buffer index' })
+map('n', '<leader>gj', ':Gitsigns next_hunk<CR>', { desc = 'Next hunk' })
+map('n', '<leader>gk', ':Gitsigns prev_hunk<CR>', { desc = 'Prev hunk' })
+
+-- lazygit
+map('n', '<leader>lg', ':LazyGit<CR>', { desc = 'Open lazygit' })
