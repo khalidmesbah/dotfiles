@@ -6,7 +6,7 @@ alias ohmyzsh="mate ~/.oh-my-zsh"
 # dotfiles
 alias .f='cd ~/dotfiles/'
 # terminal
-alias cd='z'
+# alias cd='z'
 alias cat='bat'
 alias top='bpytop'
 # test

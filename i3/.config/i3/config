@@ -162,7 +162,7 @@ for_window [class="Pavucontrol"] floating enable
 for_window [class="Thunar"] floating enable
 
 # hide title bar
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 2
 
 # screenshots
 bindsym --release Print exec flameshot full

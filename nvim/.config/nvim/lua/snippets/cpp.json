@@ -1,62 +1,44 @@
 {
-	"hi borther": {
-		"prefix": "!",
-		"body": [
-			"#include <iostream>",
-			"",
-			"using namespace std;",
-			"",
-			"int main() {",
-			"  $1",
-			"  cout << \"hello\";",
-			"  return 0;",
-			"}"
-		]
-	},
-	"for loop with i": {
-		"prefix": "fi",
-		"body": [
-			"for (int i = 0; i < $1; ++i) {",
-			"  cout << i << \" \";",
-			"}"
-		]
-	},
-	"for loop with j": {
-		"prefix": "fj",
-		"body": [
-			"for (int j = 0; j < $1; ++j) {",
-			"  cout << j << \" \";",
-			"}"
-		]
-	},
-	"for loop with k": {
-		"prefix": "fk",
-		"body": [
-			"for (int k = 0; k < $1; ++k) {",
-			"  cout << k << \" \";",
-			"}"
-		]
-	},
-	"print": {
-		"prefix": "c",
-		"body": [
-			"cout << \"$1\" << endl;",
-			"$2"
-		]
-	},
-	"separator": {
-		"prefix": "sep",
-		"body": [
-			"\n",
-			"cout << \"\\n-----------$1-----------\\n\";",
-			"",
-			"$2"
-		]
-	},
-	"space": {
-		"prefix": "space",
-		"body": [
-			"<< \" $1 \" << $2"
-		]
-	}
+  "hi borther": {
+    "prefix": "!",
+    "body": [
+      "#include <iostream>",
+      "",
+      "using namespace std;",
+      "",
+      "int main() {",
+      "  $1",
+      "  cout << \"hello\";",
+      "  return 0;",
+      "}"
+    ]
+  },
+  "for loop with i": {
+    "prefix": "fi",
+    "body": ["for (int i = 0; i < $1; ++i) {", "  cout << i << \" \";", "}"]
+  },
+  "for loop with j": {
+    "prefix": "fj",
+    "body": ["for (int j = 0; j < $1; ++j) {", "  cout << j << \" \";", "}"]
+  },
+  "for loop with node": {
+    "prefix": "fn",
+    "body": ["for (Node *cur = head; cur; cur = cur->next) {", "  $1", "}"]
+  },
+  "for loop with k": {
+    "prefix": "fk",
+    "body": ["for (int k = 0; k < $1; ++k) {", "  cout << k << \" \";", "}"]
+  },
+  "print": {
+    "prefix": "c",
+    "body": ["cout << \"$1\" << endl;", "$2"]
+  },
+  "separator": {
+    "prefix": "sep",
+    "body": ["\n", "cout << \"\\n-----------$1-----------\\n\";", "", "$2"]
+  },
+  "space": {
+    "prefix": "space",
+    "body": ["<< \" $1 \" << $2"]
+  }
 }
