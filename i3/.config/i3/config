@@ -179,11 +179,14 @@ bindsym $mod+a exec /home/khalidmesbah/repos/workflow/scripts/sb.sh
 # Problem Solving
 bindsym $mod+p exec /home/khalidmesbah/repos/workflow/scripts/ps.sh
 
+# Obsidian
+bindsym $mod+b exec --no-startup-id sh -c 'cd ~/repos/blog-posts && neovide .'
+
 # Anki
 #bindsym $mod+a exec anki
 
 # Colors
-client.focused          #0000ff #285577 #ffffff #2e9ef4   #0000ff
+client.focused          #0000ff #285577 #ffffff #2e9ef4   #00ff00
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 
 # google search
