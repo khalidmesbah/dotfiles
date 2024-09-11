@@ -13,7 +13,7 @@ return {
       { 'j-hui/fidget.nvim', opts = {} },
 
       -- Allows extra capabilities provided by nvim-cmp
-      'hrsh6th/cmp-nvim-lsp',
+      'hrsh7th/cmp-nvim-lsp',
     },
     config = function()
       -- Brief aside: **What is LSP?**
@@ -164,9 +164,9 @@ return {
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        tsserver = {
-          capabilities = capabilities,
-        },
+        -- tsserver = {
+        --   capabilities = capabilities,
+        -- },
         --
 
         lua_ls = {
@@ -205,7 +205,7 @@ return {
         'codelldb',
         'clang-format',
         'lua_ls',
-        'tsserver',
+        -- 'tsserver',
         'html',
         'prettierd',
         'jsonls',

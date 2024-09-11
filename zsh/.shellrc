@@ -199,6 +199,7 @@ alias extract='tar -xzvf $1'
 alias runc='gcc $1; ./a.out'
 alias SS="sudo systemctl"
 # misc
+alias nv='neovide ${1:-.} & disown; exit'
 alias mp='makepkg -si'
 alias str='rm -rf config.h && sudo make uninstall && sudo make clean install' # restart st
 alias sti='patch -p1 < $1'     # install a patch
@@ -235,6 +236,13 @@ alias fsay='~/scripts/fsay.sh'
 cpToAllSubDirs() {
 	find -type d -not -path "." -exec cp $1 {} \;
 }
+
+
+# neo() {
+#     local path="${1:-.}"  # Set the default value of $1 to '.'
+#     neovide "$path" & disown
+#     exit
+# }
 
 # up
 up() {

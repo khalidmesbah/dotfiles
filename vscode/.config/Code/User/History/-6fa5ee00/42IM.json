@@ -274,9 +274,5 @@
   },
   "[sql]": {
     "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
-  },
-  "C_Cpp.default.compilerPath": "/usr/bin/clang",
-  "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
   }
 }
