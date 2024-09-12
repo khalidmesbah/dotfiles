@@ -16,6 +16,7 @@ opt.smartcase = true
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
 g.have_nerd_font = true -- Set to true if you have a Nerd Font installed
+g.neovide_transparency = 0.8
 
 g.neovide_cursor_vfx_mode = 'railgun'
 -- g.neovide_cursor_vfx_particle_lifetime = 5
