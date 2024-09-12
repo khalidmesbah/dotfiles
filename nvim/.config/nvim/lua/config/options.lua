@@ -71,7 +71,7 @@ opt.smarttab = true
 opt.shiftwidth = 2
 opt.softtabstop = 2
 opt.tabstop = 2
-opt.wrap = true
+opt.wrap = false
 opt.backspace = { 'indent,eol,start' }
 opt.path:append '**'
 opt.wildignore:append { '*/node_modules/*' }

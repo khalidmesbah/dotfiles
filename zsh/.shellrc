@@ -59,7 +59,7 @@ alias pn='cd ~/repos/magic-lamp && n'
 alias pd='cd ~/repos/magic-lamp && d'
 alias k='cd ~/repos/khalidMesbah-dream && vi'
 alias alx='cd ~/repos/alx && n'
-# alias do='cd ~/downloads'
+alias dos='cd ~/downloads'
 alias nile='cd ~/repos/nilezon'
 alias sc='cd ~/repos/workflow/scripts'
 alias progs='cd ~/programs'
@@ -85,6 +85,12 @@ alias nn='cd ~/.config/nvim && nvim .'
 alias i='sv ~/.config/i3/config'
 # tmux
 alias t='tmux'
+# suckless
+alias cst='cd ~/bin/st/st-patched'
+alias rst='rmrf ~/bin/st/st-patched/* && cp ~/bin/st/st-original/* ~/bin/st/st-patched'
+alias str='rm -rf config.h && sudo make uninstall && sudo make clean install' # restart st
+alias sti='patch -p1 < $1'     # install a patch
+alias stu='patch -R < "$*"' # uninstall a patch
 # Mesbah Matrix
 alias m='cd ~/repos/mesbah-matrix'
 alias mm='m && n'
@@ -201,9 +207,6 @@ alias SS="sudo systemctl"
 # misc
 alias nv='neovide ${1:-.} & disown; exit'
 alias mp='makepkg -si'
-alias str='rm -rf config.h && sudo make uninstall && sudo make clean install' # restart st
-alias sti='patch -p1 < $1'     # install a patch
-alias stu='patch -R < "$*"' # uninstall a patch
 alias rateMirrors='rate-mirrors --allow-root --protocol https arch | sudo tee /etc/pacman.d/mirrorlist'
 alias ui='sudo pnpm dlx shadcn-ui@latest add'
 # alias f='fuck'              # auto correct
