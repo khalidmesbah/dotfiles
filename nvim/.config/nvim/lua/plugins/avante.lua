@@ -5,6 +5,20 @@ return {
   version = false, -- set this if you want to always pull the latest change
   opts = {
     provider = 'gemini', -- Recommend using Claude
+    -- auto_suggestions_provider = 'groq',
+    --
+    -- ---@type AvanteSupportedProvider
+    -- groq = {
+    --   endpoint = 'https://api.groq.com/openai/v1',
+    --   model = 'llama-3.1-70b-versatile',
+    --   timeout = 30000, -- Timeout in milliseconds
+    --   temperature = 0,
+    --   max_tokens = 4096,
+    --   ['local'] = false,
+    -- },
+    -- gemini = {
+    --   model = 'Gemini-1.5-Pro',
+    -- },
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
   build = 'make',

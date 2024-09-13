@@ -29,7 +29,7 @@ alias kmsf='ssh kmsf@192.168.1.20'
 alias startssh='sudo systemctl start sshd'
 alias statusssh='sudo systemctl status sshd'
 alias stopssh='sudo systemctl stop sshd'
-# alias z='exec thorium-browser fullscreen enable'
+# alias z='exec chromium fullscreen enable'
 alias grep='grep --color=auto'
 alias c='clear'
 alias tree='exa --tree'
@@ -69,7 +69,7 @@ alias videos='cd ~/videos'
 alias r='cd ~/repos'
 alias w='cd ~/repos/workflow'
 alias epi='sv /etc/xdg/picom.conf'
-alias ds='cd ~/repos/ps && nvim .'
+alias ds='cd ~/repos/ps && nv .'
 alias dsa='cd ~/repos/ps'
 alias vdsa='cd ~/videos/cs/dsa'
 alias ma='cd ~/repos/mastering-4-critical-skills-using-cpp-17 && nvim .'
@@ -211,10 +211,10 @@ alias rateMirrors='rate-mirrors --allow-root --protocol https arch | sudo tee /e
 alias ui='sudo pnpm dlx shadcn-ui@latest add'
 # alias f='fuck'              # auto correct
 alias f='fzf --preview="bat --color=always {}"'
-alias chrome='thorium-browser'
+alias chrome='chromium'
 alias gmail='neomutt'
 # links
-alias github='thorium-browser https://github.com/khalidmesbah?tab=repositories'
+alias github='chromium https://github.com/khalidmesbah?tab=repositories'
 # archieve
 alias untar='tar -zxvf $1'
 alias open='xdg-open'
@@ -337,20 +337,20 @@ nm() {
 
 # search google
 # g() {
-# 	thorium-browser --user-data-dir=/home/khalidmesbah/.config/chromium/Default --class="search" --app="https://www.google.com/search?q=$*"
+# 	chromium --user-data-dir=/home/khalidmesbah/.config/chromium/Default --class="search" --app="https://www.google.com/search?q=$*"
 # }
 # gs() {
-# 	thorium-browser --app="https://www.google.com/search?q=$*"
+# 	chromium --app="https://www.google.com/search?q=$*"
 # }
 # gi() {
-# 	thorium-browser --incognito "https://www.google.com/search?q=$*"
+# 	chromium --incognito "https://www.google.com/search?q=$*"
 # }
 # gn() {
-# 	thorium-browser --new-window "https://www.google.com/search?q=$*"
+# 	chromium --new-window "https://www.google.com/search?q=$*"
 # }
 # custom searches
 mdn() {
-	thorium-browser --user-data-dir=/home/khalidmesbah/.config/chromium/Default --class="search" --app="https://developer.mozilla.org/en-US/search?q=$*"
+	chromium --user-data-dir=/home/khalidmesbah/.config/chromium/Default --class="search" --app="https://developer.mozilla.org/en-US/search?q=$*"
 }
 # search youtube
 y() {
@@ -358,10 +358,10 @@ y() {
 	if [[ $* != "" ]]; then
 		query="results?search_query=$*"
 	fi
-	thorium-browser --app="https://www.youtube.com/$query"
+	chromium --app="https://www.youtube.com/$query"
 }
 yy() {
-	thorium-browser --app-id="agimnkijcaahngcdmfeangaknmldooml"
+	chromium --app-id="agimnkijcaahngcdmfeangaknmldooml"
 }
 # translations, languages, and spell
 # t() {
@@ -374,7 +374,7 @@ yy() {
 # 	trans en:en "$*" | cat
 # }
 # gt() {
-# 	thorium-browser --user-data-dir=/home/khalidmesbah/.config/chromium/Default --class="search" --app="https://translate.google.com/?sl=en&tl=ar&text=$*&op=translate"
+# 	chromium --user-data-dir=/home/khalidmesbah/.config/chromium/Default --class="search" --app="https://translate.google.com/?sl=en&tl=ar&text=$*&op=translate"
 # }
 spell() {
 	aspell -t -c "$1"
@@ -507,7 +507,7 @@ export PGDATA=/var/lib/postgres/data
 export EDITOR='/home/khalidmesbah/.config/nvim'
 export SUDO_EDITOR='/home/khalidmesbah/.config/nvim'
 export TERMINAL='st-256color'
-export BROWSER='thorium-browser'
+export BROWSER='chromium'
 export FONT='FiraCode Nerd Font'
 export FONT2='Caskaydia Cove Nerd Font'
 export FONT3='JetBrainsMono Nerd Font'
@@ -526,3 +526,6 @@ export GOPATH=$HOME/go
 
 # Update PATH to include GOPATH and GOROOT binaries
 export PATH=$GOPATH/bin:$GOROOT/bin:$HOME/.local/bin:$PATH
+
+# Secret API keys
+source ~/.secrets.sh
