@@ -9,6 +9,7 @@ alias .f='cd ~/dotfiles/'
 # alias cd='z'
 alias cat='bat'
 alias top='bpytop'
+alias sec='v ~/.secrets.sh'
 # test
 alias db='db-migrate'
 alias dbd='db-migrate down -v'
@@ -32,10 +33,17 @@ alias stopssh='sudo systemctl stop sshd'
 # alias z='exec chromium fullscreen enable'
 alias grep='grep --color=auto'
 alias c='clear'
-alias tree='exa --tree'
-alias l='exa -aG --color=always --icons --group-directories-first'
-alias ls='l'
+# Changing "ls" to "eza"
+alias l='eza -aG --color=always --icons --group-directories-first'
+alias l.='eza -al --color=always --group-directories-first ../' # ls on the PARENT directory
+alias l..='eza -al --color=always --group-directories-first ../../' # ls on directory 2 levels up
+alias l...='eza -al --color=always --group-directories-first ../../../' # ls on directory 3 levels up
+alias la='eza -a --color=always --group-directories-first'  # all files and dirs
+alias ll='eza -l --color=always --group-directories-first'  # long format
+alias lt='eza -aT --color=always --group-directories-first' # tree listing
 alias ll='l -l'
+alias ls='l' # my preferred listing
+alias tree='eza --tree'
 alias ..='cd ..'
 alias e='echo $1'
 alias ee='echo -e $1'
@@ -302,10 +310,22 @@ kill() {
 }
 
 function pkill() {
-    echo "COMMAND | PID %CPU %MEM"
-    ps aux | awk 'NR>1 {print $11 " | " $2, $3, $4}' | fzf --height 40% --layout=reverse --prompt="Select process to kill: " | awk -F'|' '{print $2}' | xargs -r sudo kill
+  ps aux | 
+  fzf --height 40% \
+      --layout=reverse \
+      --header-lines=1 \
+      --prompt="Select process to kill: " \
+      --preview 'echo {}' \
+      --preview-window up:3:hidden:wrap \
+      --bind 'F2:toggle-preview' |
+  awk '{print $2}' |
+  xargs -r bash -c '
+      if ! kill "$1" 2>/dev/null; then
+          echo "Regular kill failed. Attempting with sudo..."
+          sudo kill "$1" || echo "Failed to kill process $1" >&2
+      fi
+  ' --
 }
-
 # check for errors
 cherr() {
 	sudo systemctl --failed
