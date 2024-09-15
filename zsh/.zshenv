@@ -1,1 +1,2 @@
-source ~/.shellrc
+source ~/.zsh_aliases
+source ~/.zsh_functions
