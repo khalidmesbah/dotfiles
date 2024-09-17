@@ -1,3 +1,7 @@
+
+# fabric
+source  ~/.zsh_fabric_patterns_functions.zsh
+
 # Copyt to all subdirectories
 
 cpToAllSubDirs() {
@@ -162,10 +166,10 @@ cfspell() {
 	cat "$1" | aspell --personal=personal-word-list.pws list
 }
 # download youtube videos
-yd() {
+yout() {
 	yt-dlp -f 22 -P $2 $1
 }
-fd() {
+facd() {
 	yt-dlp -P ~/videos/facebook/ $1
 }
 ydv() {

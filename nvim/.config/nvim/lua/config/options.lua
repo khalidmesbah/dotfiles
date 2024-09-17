@@ -15,7 +15,7 @@ opt.smartcase = true
 -- disable netrw at the very start of your init.lua
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
-g.have_nerd_font = true -- Set to true if you have a Nerd Font installed
+g.have_nerd_font = false -- Set to true if you have a Nerd Font installed
 g.neovide_transparency = 0.8
 
 g.neovide_cursor_vfx_mode = 'railgun'
@@ -45,16 +45,15 @@ opt.breakindent = true
 opt.undofile = true
 opt.timeoutlen = 300
 opt.inccommand = 'split'
-opt.cursorline = true
 opt.scrolloff = 10
 opt.showtabline = 1
 opt.colorcolumn = '80'
-opt.cursorcolumn = true
-opt.cursorline = true
+opt.cursorcolumn = false
+opt.cursorline = false
 opt.tabpagemax = 1
-opt.relativenumber = true
+opt.relativenumber = false
 opt.guicursor = ''
-opt.syntax = 'OFF'
+opt.syntax = 'off'
 vim.scriptencoding = 'utf-8'
 opt.encoding = 'utf-8'
 opt.fileencoding = 'utf-8'
@@ -71,7 +70,7 @@ opt.smarttab = true
 opt.shiftwidth = 2
 opt.softtabstop = 2
 opt.tabstop = 2
-opt.wrap = false
+opt.wrap = true
 opt.backspace = { 'indent,eol,start' }
 opt.path:append '**'
 opt.wildignore:append { '*/node_modules/*' }
@@ -83,6 +82,7 @@ opt.signcolumn = 'yes'
 opt.conceallevel = 1
 opt.spell = true
 -- vim.cmd 'colorscheme retrobox'
+-- vim.cmd 'syntax off'
 
 --[[  use tabs instead of spaces
 o.softtabstop = 4

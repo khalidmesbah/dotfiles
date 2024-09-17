@@ -37,3 +37,8 @@ vim.api.nvim_create_autocmd('BufWritePost', {
   pattern = '*.mdx',
   command = 'silent !python ~/repos/workflow/scripts/update-date.py %',
 })
+
+vim.api.nvim_create_user_command('Mesbah', function()
+  package.loaded['mesbah'] = nil
+  require('mesbah').display_word_under_cursor()
+end, {})

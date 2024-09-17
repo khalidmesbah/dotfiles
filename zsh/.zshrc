@@ -10,15 +10,17 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
 plugins=(git zsh-autosuggestions zsh-completions fzf-tab)
+# plugins=(git zsh-autosuggestions zsh-completions fzf-tab vi-mode)
 
 source $ZSH/oh-my-zsh.sh
-source ~/.zsh_aliases
-source ~/.zsh_functions
+source ~/.zsh_aliases.zsh
+source ~/.zsh_functions.zsh
 source ~/.secrets.sh
 source <(fzf --zsh)
 
-eval "$(zoxide init zsh)"
+setopt NO_GLOB
 
+eval "$(zoxide init zsh)"
 
 # -- EXPORTS --
 
@@ -30,8 +32,8 @@ export NVM_DIR="$HOME/.nvm"
 
 export PNPM_HOME="~/.local/share/pnpm"
 case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
+    *":$PNPM_HOME:"*) ;;
+    *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 
 export BUN_INSTALL="$HOME/.bun"

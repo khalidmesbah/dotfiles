@@ -1,7 +1,7 @@
 # zsh
 alias zc="nvim ~/.zshrc"
-alias za="nvim ~/.zsh_aliases"
-alias zf="nvim ~/.zsh_aliases"
+alias za="nvim ~/.zsh_aliases.zsh"
+alias zf="nvim ~/.zsh_functions.zsh"
 alias zr='source ~/.zshrc'
 alias ohmyzsh="mate ~/.oh-my-zsh"
 
@@ -9,7 +9,7 @@ alias ohmyzsh="mate ~/.oh-my-zsh"
 alias .f='cd ~/dotfiles/'
 
 # terminal
-alias cd='z'
+# alias cd='z'
 alias cat='bat'
 alias top='bpytop'
 alias sec='v ~/.secrets.sh'
@@ -27,8 +27,8 @@ alias sd='shutdown now'
 alias re='reboot'
 
 # clipboard
- alias copy='xsel --input --clipboard'
- alias paste='xsel --output --clipboard'
+alias copy='xsel --input --clipboard'
+alias paste='xsel --output --clipboard'
 
 # ssh
 alias mesbah='ssh mesbah@192.168.1.14'
@@ -251,7 +251,7 @@ alias edge='microsoft-edge-stable'
 alias calx='python ~/scripts/calx.py'
 #
 # Misc
-alias bg='feh --bg-fill --randomize ~/pictures/wallpapers/*'
+alias bg='feh --bg-fill --randomize ~/pictures/wallpapers'
 
 # Fun
 alias say= '~/repos/workflow/scripts/say.sh'

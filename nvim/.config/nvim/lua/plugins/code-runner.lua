@@ -21,6 +21,9 @@ return {
           'test ! -f ./test_runner.sh || test ! -f ./test_cases.txt || [ ! -s test_cases.txt ] && ./a.out ||',
           './test_runner.sh test_cases.txt a.out',
         },
+        go = {
+          'go run $fileName',
+        },
       },
     },
   },

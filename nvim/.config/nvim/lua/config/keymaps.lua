@@ -5,7 +5,8 @@ local opts = { noremap = true, silent = true }
 
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')
 map('i', 'jj', '<Esc>')
-map('n', '<C-i>', '<cmd>tab term lua ~/lab/1.lua<CR>')
+-- map('n', '<C-i>', '<cmd>tab term go run ~/lab/23.go<CR>')
+map('n', '<C-i>', '<cmd>tab term<CR>')
 
 -- Diagnostic keymaps
 map('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
@@ -43,8 +44,6 @@ map('n', 'te', ':tabedit<Return>')
 map('n', '<s-l>', ':tabnext<Return>')
 map('n', '<s-h>', ':tabprev<Return>')
 map('n', 'tw', ':tabclose<Return>')
-
--- By khalidmesbah
 
 map('n', '=', '<C-a>', { desc = 'increment' })
 map('n', '<C-a>', 'ggVG', { desc = 'Select all' })
@@ -105,3 +104,7 @@ map('n', '<leader>lg', ':LazyGit<CR>', { desc = 'Open lazygit' })
 -- dap
 map('n', '<leader>db', ':DapToggleBreakpoint<CR>', { desc = 'Toggle breakpoint' })
 map('n', '<leader>dc', ':DapContinue<CR>', { desc = 'Start or continue debugging' })
+
+-- [[ Mesbah Keymaps ]]
+
+vim.api.nvim_set_keymap('n', '<leader>w', ':lua require("mesbah").display_word_under_cursor()<CR>', { noremap = true, silent = true })
