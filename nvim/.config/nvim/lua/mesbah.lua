@@ -1,24 +1,39 @@
 local M = {}
 
-local function create_float_window(content)
-  -- Create a new buffer for the floating window
+local function create_float_buffer(content)
   local buf = vim.api.nvim_create_buf(false, true)
-
-  -- Ensure content is a table of strings
   local lines = type(content) == 'string' and { content } or content
-
-  -- Set the buffer's content
   vim.api.nvim_buf_set_lines(buf, 0, -1, true, lines)
 
-  -- Calculate dimensions and position
-  local width = 61
-  local height = math.min(#lines, 20) -- Limit height to 20 lines
-  local win_height = vim.api.nvim_get_option 'lines'
-  local win_width = vim.api.nvim_get_option 'columns'
-  local row = math.floor((win_height - height) / 3)
-  local col = math.floor((win_width - width) / 3)
+  local opts = {
+    modifiable = false,
+    buftype = 'nofile',
+    bufhidden = 'wipe',
+  }
 
-  -- Set up floating window options
+  for k, v in pairs(opts) do
+    vim.api.nvim_buf_set_option(buf, k, v)
+  end
+
+  local width = 65
+  local max_height = math.floor(vim.o.lines * 0.8)
+  local height = math.min(#lines, max_height)
+
+  vim.api.nvim_buf_set_var(buf, 'float_width', width)
+  vim.api.nvim_buf_set_var(buf, 'float_height', height)
+
+  return buf
+end
+
+local function display_float_buffer(buf)
+  local width = vim.api.nvim_buf_get_var(buf, 'float_width')
+  local height = vim.api.nvim_buf_get_var(buf, 'float_height')
+
+  local win_height = vim.o.lines
+  local win_width = vim.o.columns
+  local row = math.floor((win_height - height) / 2)
+  local col = math.floor((win_width - width) / 2)
+
   local opts = {
     style = 'minimal',
     relative = 'editor',
@@ -30,34 +45,15 @@ local function create_float_window(content)
     focusable = true,
   }
 
-  -- Create the floating window
   local win = vim.api.nvim_open_win(buf, true, opts)
+  vim.wo[win].wrap = true
+  vim.wo[win].scrolloff = 0
+  vim.wo[win].sidescrolloff = 0
 
-  -- Enable word wrap
-  vim.api.nvim_win_set_option(win, 'wrap', true)
+  -- Set cursor to top of buffer
+  vim.api.nvim_win_set_cursor(win, { 1, 0 })
 
-  -- Set buffer options
-  vim.api.nvim_buf_set_option(buf, 'modifiable', false)
-  vim.api.nvim_buf_set_option(buf, 'buftype', 'nofile')
-
-  -- Set up keymaps for the floating window
-  local function set_keymap(mode, lhs, rhs)
-    vim.api.nvim_buf_set_keymap(buf, mode, lhs, rhs, { noremap = true, silent = true })
-  end
-
-  set_keymap('n', 'q', ':close<CR>')
-  set_keymap('n', '<Esc>', ':close<CR>')
-  set_keymap('n', 'j', 'j')
-  set_keymap('n', 'k', 'k')
-  set_keymap('n', '<C-d>', '<C-d>')
-  set_keymap('n', '<C-u>', '<C-u>')
-  set_keymap('n', '<C-f>', '<C-f>')
-  set_keymap('n', '<C-b>', '<C-b>')
-  set_keymap('n', 'G', 'G')
-  set_keymap('n', 'gg', 'gg')
-
-  -- Set up autocommand to close the window when cursor moves outside
-  vim.api.nvim_create_autocmd({ 'BufLeave' }, {
+  vim.api.nvim_create_autocmd('BufLeave', {
     buffer = buf,
     callback = function()
       if vim.api.nvim_win_is_valid(win) then
@@ -67,14 +63,15 @@ local function create_float_window(content)
     once = true,
   })
 end
+
 local function osExecute(cmd)
-  local fileHandle = assert(io.popen(cmd, 'r'))
-  local commandOutput = assert(fileHandle:read '*a')
-  fileHandle:close()
-  return commandOutput
+  local handle = assert(io.popen(cmd, 'r'))
+  local output = assert(handle:read '*a')
+  handle:close()
+  return output
 end
 
-M.display_word_under_cursor = function()
+function M.display_word_under_cursor()
   local word = vim.fn.expand '<cword>'
 
   if word == '' then
@@ -83,15 +80,10 @@ M.display_word_under_cursor = function()
   end
 
   local translation = osExecute('trans --no-ansi ' .. word)
+  local content = vim.split(translation, '\n')
 
-  -- Split the translation into lines
-  local content = {}
-  for line in translation:gmatch '[^\r\n]+' do
-    table.insert(content, line)
-  end
-  print('Number of lines in translation: ' .. #content)
-
-  create_float_window(content)
+  local buf = create_float_buffer(content)
+  display_float_buffer(buf)
 end
 
 return M

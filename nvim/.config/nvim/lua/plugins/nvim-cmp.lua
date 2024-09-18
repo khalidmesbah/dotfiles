@@ -36,6 +36,7 @@ return {
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-cmdline',
+      'hrsh7th/cmp-emoji',
     },
     config = function()
       -- See `:help cmp`
@@ -129,12 +130,13 @@ return {
           --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
         },
         sources = {
-          { name = 'supermaven' },
-          { name = 'codeium' },
           { name = 'nvim_lsp' },
+          { name = 'supermaven' },
+          -- { name = 'codeium' },
           { name = 'luasnip' },
-          { name = 'buffer' },
           { name = 'path' },
+          { name = 'buffer', keyword_length = 5 },
+          { name = 'emoji' },
         },
 
         experimental = {

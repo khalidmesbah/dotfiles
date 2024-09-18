@@ -32,13 +32,13 @@ vim.cmd [[
 -- Define an autocommand group
 vim.api.nvim_create_augroup('FileChange', { clear = true })
 
--- Update the last modified date of the mdx file
+-- Update the last modified date of the mdx file only if it's in the 'blog-posts' directory
 vim.api.nvim_create_autocmd('BufWritePost', {
   pattern = '*.mdx',
-  command = 'silent !python ~/repos/workflow/scripts/update-date.py %',
+  callback = function()
+    local filepath = vim.fn.expand '%:p' -- Get the full path of the file
+    if string.match(filepath, '/blog%-posts/') then
+      vim.cmd('silent !python ~/repos/workflow/scripts/update-date.py ' .. filepath)
+    end
+  end,
 })
-
-vim.api.nvim_create_user_command('Mesbah', function()
-  package.loaded['mesbah'] = nil
-  require('mesbah').display_word_under_cursor()
-end, {})
