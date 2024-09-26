@@ -1,4 +1,0 @@
-vim.api.nvim_create_user_command('Mesbah', function()
-  package.loaded['mesbah'] = nil
-  require('mesbah').todo()
-end, {})

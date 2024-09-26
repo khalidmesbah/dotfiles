@@ -86,4 +86,15 @@ function M.display_word_under_cursor()
   display_float_buffer(buf)
 end
 
+function M.speak_word_under_cursor()
+  local word = vim.fn.expand '<cword>'
+
+  if word == '' then
+    print 'No word under cursor'
+    return
+  end
+
+  io.popen('trans -speak --no-translate ' .. word, 'r')
+end
+
 return M
