@@ -84,6 +84,13 @@ return {
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader>sn', builtin.buffers, { desc = '[ ] Find existing buffers' })
+      vim.keymap.set('n', '<leader>p', function()
+        builtin.find_files {
+          cwd = '/home/khalidmesbah/repos/snippets/',
+          no_ignore = true,
+          find_command = { 'find', '-type', 'f', '-not', '-path', '*/.*', '-regex', '.*\\.[^./]*$' },
+        }
+      end, { desc = '[S]earch [S]nippets' })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()

@@ -108,4 +108,4 @@ map('n', '<leader>dc', ':DapContinue<CR>', { desc = 'Start or continue debugging
 -- [[ Mesbah Keymaps ]]
 
 vim.api.nvim_set_keymap('n', '<leader>w', ':lua require("mesbah").display_word_under_cursor()<CR>', { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('n', '<leader>e', ':lua require("mesbah").speak_word_under_cursor()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>s', ':lua require("mesbah").speak_word_under_cursor()<CR>', { noremap = true, silent = true })
