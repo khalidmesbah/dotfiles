@@ -151,7 +151,7 @@ bar {
 
 # floating terminal
 for_window [title="floating_terminal"] floating enable
-bindsym $mod+o exec $terminal -t floating_terminal 
+bindsym $mod+o exec $terminal -t floating_terminal
 
 # for_window [class="vlc"] floating enable
 # bindsym $mod+p exec vlc
@@ -174,8 +174,8 @@ bindsym XF86Calculator exec gnome-calculator
 bindsym $mod+c exec gnome-calculator
 
 # Second Brain
-for_window [title="notetaker_window"] floating enable
-bindsym $mod+a exec $terminal -e /home/khalidmesbah/repos/workflow/scripts/sb.sh -t notetaker_window
+for_window [ title="notetaker_window" ] floating enable
+bindsym $mod+n exec $terminal -e /home/khalidmesbah/repos/workflow/scripts/sb.sh -t notetaker_window
 
 # Problem Solving
 bindsym $mod+p exec /home/khalidmesbah/repos/workflow/scripts/ps.sh
