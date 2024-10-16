@@ -9,8 +9,8 @@ ENABLE_CORRECTION="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
-plugins=(git zsh-autosuggestions zsh-completions fzf-tab)
-# plugins=(git zsh-autosuggestions zsh-completions fzf-tab vi-mode)
+# plugins=(git zsh-autosuggestions zsh-completions fzf-tab)
+plugins=(git zsh-autosuggestions zsh-completions fzf-tab vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.zsh_aliases.zsh
