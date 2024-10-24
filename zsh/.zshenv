@@ -1,2 +1,2 @@
-source ~/.zsh_aliases.zsh
-source ~/.zsh_functions.zsh
+# source ~/.zsh_aliases.zsh
+# source ~/.zsh_functions.zsh
