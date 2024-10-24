@@ -52,8 +52,8 @@ export PATH=$SNAP:$PATH
 # OTHER EXPORTS
 export ZSH="$HOME/.oh-my-zsh"
 export PGDATA='/var/lib/postgres/data'
-export EDITOR='~/.config/nvim'
-export SUDO_EDITOR='~/.config/nvim'
+export EDITOR='/usr/bin/nvim'
+export SUDO_EDITOR='/usr/bin/nvim'
 export TERMINAL='st-256color'
 export BROWSER='chromium'
 export FONT='FiraCode Nerd Font'
