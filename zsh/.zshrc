@@ -18,6 +18,9 @@ source ~/.zsh_functions.zsh
 source ~/.secrets.sh
 source <(fzf --zsh)
 
+bindkey -s '^F' './repos/workflow/scripts/open-file.sh\n'
+
+
 setopt NO_GLOB
 
 eval "$(zoxide init zsh)"
