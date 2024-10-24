@@ -130,9 +130,9 @@ return {
           --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
         },
         sources = {
-          { name = 'nvim_lsp' },
           { name = 'supermaven' },
-          -- { name = 'codeium' },
+          { name = 'codeium' },
+          { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },
           { name = 'buffer', keyword_length = 5 },
