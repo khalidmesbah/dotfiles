@@ -1,0 +1,7 @@
+
+[[Snippets]]
+  Description = "print hi"
+  Filename = "/home/khalidmesbah/.config/pet/snippet.toml"
+  Output = ""
+  Tag = []
+  command = "echo hi"
