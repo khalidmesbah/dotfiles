@@ -174,8 +174,9 @@ bindsym XF86Calculator exec gnome-calculator
 bindsym $mod+c exec gnome-calculator
 
 # Second Brain
-for_window [title="notetaker_window"] floating enable
-bindsym $mod+a exec $terminal -e /home/khalidmesbah/repos/workflow/scripts/sb.sh -t notetaker_window
+bindsym $mod+a exec /home/khalidmesbah/repos/workflow/scripts/sb.sh
+# for_window [title="notetaker_window"] floating enable
+# bindsym $mod+a exec $terminal -e /home/khalidmesbah/repos/workflow/scripts/sb.sh -t notetaker_window
 
 # Problem Solving
 bindsym $mod+p exec /home/khalidmesbah/repos/workflow/scripts/ps.sh
