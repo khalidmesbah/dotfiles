@@ -6,7 +6,7 @@ local opts = { noremap = true, silent = true }
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')
 map('i', 'jj', '<Esc>')
 -- map('n', '<C-i>', '<cmd>tab term go run ~/lab/23.go<CR>')
-map('n', '<C-i>', '<cmd>tab term<CR>')
+-- map('n', '<C-i>', '<cmd>tab term<CR>')
 
 -- Diagnostic keymaps
 map('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
