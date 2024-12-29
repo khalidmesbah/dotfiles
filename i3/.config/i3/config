@@ -2,6 +2,7 @@
 
 set $mod Mod4
 set $terminal st
+# set $terminal ghostty
 #set $terminal alacritty
 
 # Font
@@ -150,8 +151,8 @@ bar {
 #--------------- added by me ---------------
 
 # floating terminal
-for_window [title="floating_terminal"] floating enable
-bindsym $mod+o exec $terminal -t floating_terminal 
+bindsym $mod+o exec $terminal -t floating-terminal
+for_window [title="floating-terminal"] floating enable
 
 # for_window [class="vlc"] floating enable
 # bindsym $mod+p exec vlc
