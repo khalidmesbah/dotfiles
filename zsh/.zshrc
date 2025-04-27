@@ -134,3 +134,5 @@ bindkey -s '^F' '~/repos/workflow/scripts/open-file.sh\n'
 # The setopt NO_GLOB command in Zsh is used to disable globbing, which is the process of expanding wildcard characters (like *, ?, etc.) into matching filenames. When globbing is disabled, any command that includes wildcard characters will not attempt to match files, and instead will treat them as literal strings.
 
 eval "$(zoxide init zsh)"
+
+go run ~/repos/workflow/scripts/taskify.go

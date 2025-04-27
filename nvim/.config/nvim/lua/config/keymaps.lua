@@ -102,8 +102,8 @@ map('n', '<leader>gk', ':Gitsigns prev_hunk<CR>', { desc = 'Prev hunk' })
 map('n', '<leader>lg', ':LazyGit<CR>', { desc = 'Open lazygit' })
 
 -- dap
-map('n', '<leader>db', ':DapToggleBreakpoint<CR>', { desc = 'Toggle breakpoint' })
-map('n', '<leader>dc', ':DapContinue<CR>', { desc = 'Start or continue debugging' })
+-- map('n', '<leader>db', ':DapToggleBreakpoint<CR>', { desc = 'Toggle breakpoint' })
+-- map('n', '<leader>dc', ':DapContinue<CR>', { desc = 'Start or continue debugging' })
 
 -- [[ Mesbah Keymaps ]]
 

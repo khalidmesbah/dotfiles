@@ -256,3 +256,6 @@ alias bg='feh --bg-fill --randomize ~/pictures/wallpapers'
 # Fun
 alias say= '~/repos/workflow/scripts/say.sh'
 alias fsay='~/repos/workflow/scripts/fsay.sh'
+
+# CMake, make, CPP compilation stuff
+alias mk='cmake -B build && make -C build && ./build/a.out'
