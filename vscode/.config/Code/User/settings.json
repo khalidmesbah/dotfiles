@@ -278,5 +278,6 @@
   "C_Cpp.default.compilerPath": "/usr/bin/clang",
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
-  }
+  },
+  "C_Cpp.intelliSenseEngine": "disabled"
 }

@@ -200,8 +200,8 @@ bindsym $mod+g exec ~/repos/workflow/scripts/search.sh
 bindsym $mod+y exec "thorium-browser --app-id=agimnkijcaahngcdmfeangaknmldooml"
 
 # notes 
-#for_window [ title="notetaker_window" ] floating enable
-#bindsym $mod+n exec $terminal -e /home/khalidmesbah/repos/workflow/scripts/notetaker.sh -t notetaker_window
+# for_window [ title="notetaker_window" ] floating enable
+# bindsym $mod+n exec $terminal -e /home/khalidmesbah/repos/workflow/scripts/notetaker.sh -t notetaker_window
 
 # thunar
 bindsym $mod+n exec "thunar"
