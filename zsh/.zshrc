@@ -37,6 +37,7 @@ export FONT='FiraCode Nerd Font'
 export FONT2='Caskaydia Cove Nerd Font'
 export FONT3='JetBrainsMono Nerd Font'
 export PS1="%F{green}%1~:%f"
+export MANPAGER='nvim +Man!'
 
 # --Configurations--
 HISTCONTROL=ignoreboth
@@ -135,4 +136,12 @@ bindkey -s '^F' '~/repos/workflow/scripts/open-file.sh\n'
 
 eval "$(zoxide init zsh)"
 
-go run ~/repos/workflow/scripts/taskify.go
+# go run ~/repos/workflow/scripts/taskify.go
+
+# pnpm
+export PNPM_HOME="/home/khalidmesbah/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

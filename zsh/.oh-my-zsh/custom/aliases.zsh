@@ -259,3 +259,6 @@ alias fsay='~/repos/workflow/scripts/fsay.sh'
 
 # CMake, make, CPP compilation stuff
 alias mk='cmake -B build && make -C build && ./build/a.out'
+
+# AI commit2
+alias aic="aicommit2"
