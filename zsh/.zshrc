@@ -38,6 +38,7 @@ export FONT2='Caskaydia Cove Nerd Font'
 export FONT3='JetBrainsMono Nerd Font'
 export PS1="%F{green}%1~:%f"
 export MANPAGER='nvim +Man!'
+export XDG_CONFIG_HOME="$HOME/.config"
 
 # --Configurations--
 HISTCONTROL=ignoreboth
@@ -109,7 +110,7 @@ fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 plugins=(git zsh-autosuggestions zsh-completions fzf-tab vi-mode)
 
 source $ZSH/oh-my-zsh.sh
-source <(fzf --zsh)
+# source <(fzf --zsh)
 
 # User configuration
 
@@ -134,14 +135,30 @@ bindkey -s '^F' '~/repos/workflow/scripts/open-file.sh\n'
 # setopt NO_GLOB
 # The setopt NO_GLOB command in Zsh is used to disable globbing, which is the process of expanding wildcard characters (like *, ?, etc.) into matching filenames. When globbing is disabled, any command that includes wildcard characters will not attempt to match files, and instead will treat them as literal strings.
 
+# NOTE: Zoxide
 eval "$(zoxide init zsh)"
 
+# NOTE: taskify
 # go run ~/repos/workflow/scripts/taskify.go
 
-# pnpm
+# NOTE: pnpm
 export PNPM_HOME="/home/khalidmesbah/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
-# pnpm end
+
+# NOTE: FZF
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --zsh)"
+
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git "
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+
+export FZF_DEFAULT_OPTS="--height 50% --layout=default --border --color=hl:#2dd4bf"
+
+# Setup fzf previews
+export FZF_CTRL_T_OPTS="--preview 'bat --color=always -n --line-range :500 {}'"
+export FZF_ALT_C_OPTS="--preview 'eza --icons=always --tree --color=always {} | head -200'"
+

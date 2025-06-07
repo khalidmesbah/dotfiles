@@ -262,3 +262,6 @@ alias mk='cmake -B build && make -C build && ./build/a.out'
 
 # AI commit2
 alias aic="aicommit2"
+
+# opens documentation through fzf (eg: git,zsh etc.)
+alias fman="compgen -c | fzf | xargs man"

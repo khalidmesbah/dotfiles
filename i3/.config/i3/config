@@ -203,8 +203,8 @@ bindsym $mod+y exec "thorium-browser --app-id=agimnkijcaahngcdmfeangaknmldooml"
 # for_window [ title="notetaker_window" ] floating enable
 # bindsym $mod+n exec $terminal -e /home/khalidmesbah/repos/workflow/scripts/notetaker.sh -t notetaker_window
 
-# thunar
-bindsym $mod+n exec "thunar"
+# dolphin
+bindsym $mod+n exec "dolphin"
 
 # gnome-sound-recorder
 bindsym $mod+x exec "gnome-sound-recorder"
