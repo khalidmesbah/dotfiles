@@ -1,7 +1,7 @@
 # zsh
 alias zc="nvim ~/.zshrc"
-alias za="nvim ~/.zsh_aliases.zsh"
-alias zf="nvim ~/.zsh_functions.zsh"
+alias za="nvim ~/dotfiles/zsh/.oh-my-zsh/custom/aliases.zsh"
+alias zf="nvim ~/dotfiles/zsh/.oh-my-zsh/custom/functions.zsh"
 alias zr='source ~/.zshrc'
 alias ohmyzsh="mate ~/.oh-my-zsh"
 

@@ -42,3 +42,29 @@ vim.api.nvim_create_autocmd('BufWritePost', {
     end
   end,
 })
+
+vim.api.nvim_create_autocmd('InsertCharPre', {
+  pattern = '*.md*',
+  callback = function()
+    local row, col = unpack(vim.api.nvim_win_get_cursor(0)) -- cursor pos
+    local line = vim.api.nvim_get_current_line()
+
+    -- Only proceed if inserting an alphabetic character
+    local char = vim.v.char
+    if not char:match '%a' then
+      return
+    end
+
+    -- Get the text before the cursor
+    local before_cursor = line:sub(1, col)
+
+    -- Check if there's already an alphabetic character before cursor
+    if before_cursor:match '%a' then
+      -- There is already an alphabetic char before cursor; do nothing
+      return
+    end
+
+    -- If no alphabetic char before cursor, capitalize current char
+    vim.v.char = char:upper()
+  end,
+})

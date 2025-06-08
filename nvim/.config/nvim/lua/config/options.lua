@@ -16,7 +16,7 @@ opt.smartcase = true
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
 g.have_nerd_font = false -- Set to true if you have a Nerd Font installed
-g.neovide_transparency = 0.8
+g.neovide_opacity = 0.8
 
 g.neovide_cursor_vfx_mode = 'railgun'
 -- g.neovide_cursor_vfx_particle_lifetime = 5
@@ -70,7 +70,6 @@ opt.smarttab = true
 opt.shiftwidth = 2
 opt.softtabstop = 2
 opt.tabstop = 2
-opt.wrap = true
 opt.backspace = { 'indent,eol,start' }
 opt.path:append '**'
 opt.wildignore:append { '*/node_modules/*' }
@@ -91,3 +90,9 @@ o.shiftwidth = 4
 o.expandtab = false
 o.smartindent = true 
 ]]
+
+-- Set textwidth to 80 characters (auto-wrap at 80)
+vim.opt.textwidth = 80
+vim.opt.formatoptions:append 'tcr'
+opt.wrap = true
+opt.linebreak = true

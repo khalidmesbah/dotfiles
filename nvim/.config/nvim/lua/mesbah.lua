@@ -84,6 +84,7 @@ function M.display_word_under_cursor()
 
   local buf = create_float_buffer(content)
   display_float_buffer(buf)
+  io.popen('trans -speak --no-translate ' .. word, 'r')
 end
 
 function M.speak_word_under_cursor()
@@ -95,6 +96,14 @@ function M.speak_word_under_cursor()
   end
 
   io.popen('trans -speak --no-translate ' .. word, 'r')
+end
+
+-- Setup keymaps
+function M.setup()
+  local opts = { noremap = true, silent = true }
+
+  vim.keymap.set('n', '<leader>w', ':lua require("mesbah").display_word_under_cursor()<CR>', opts)
+  vim.keymap.set('n', '<leader>s', ':lua require("mesbah").speak_word_under_cursor()<CR>', opts)
 end
 
 return M
