@@ -27,22 +27,31 @@ vim.cmd [[
 -- }
 --
 
--- update date of md files frontmatter
-
--- Define an autocommand group
+--
 vim.api.nvim_create_augroup('FileChange', { clear = true })
 
--- Update the last modified date of the mdx file only if it's in the 'blog-posts' directory
+-- Update date of md files in frontmatter
 vim.api.nvim_create_autocmd('BufWritePost', {
   pattern = '*.mdx',
   callback = function()
-    local filepath = vim.fn.expand '%:p' -- Get the full path of the file
-    if string.match(filepath, '/blog%-posts/') then
+    local filepath = vim.fn.expand '%:p'
+
+    if not string.match(filepath, '/blog%-posts/') then
+      return
+    end
+
+    local handle = io.popen('git diff --quiet ' .. filepath .. '; echo $?')
+    local result = handle:read '*a'
+    handle:close()
+
+    if tonumber(result) ~= 0 then
       vim.cmd('silent !python ~/repos/workflow/scripts/update-date.py ' .. filepath)
     end
   end,
 })
 
+-- Auto capitalize the first alphabetic character of every line in md
+-- files
 vim.api.nvim_create_autocmd('InsertCharPre', {
   pattern = '*.md*',
   callback = function()
